@@ -25,10 +25,14 @@ def ping_ip(ip: str):
 if __name__ == "__main__":
     DEFAULT_INPUT_FILE = "scan_result.json"
     input_file = (
-        input(f"Input filename (Enter for {DEFAULT_INPUT_FILE}): ")
+        input(f'Scan result file path ("{DEFAULT_INPUT_FILE}" by default): ')
         or DEFAULT_INPUT_FILE
     )
-    output_file = "result.json"
+    DEFAULT_OUTPUT_FILE = "ping_result.json"
+    output_file = (
+        input(f'Output file path ("{DEFAULT_OUTPUT_FILE}" by default): ')
+        or DEFAULT_OUTPUT_FILE
+    )
 
     with open(input_file, "r") as f:
         subnets = json.load(f)
